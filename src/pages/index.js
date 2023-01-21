@@ -1,10 +1,14 @@
-import React from "react";
+
+import React from 'react';
+import EventCreator from '../components/eventcreator';
 import { Form, Link, useLoaderData } from "react-router-dom";
 import Calendar from "../components/calendar";
+
 
 function Index(props) {
 	const gigs = useLoaderData();
 	return (
+    <EventCreator />
 		<div className="index">
 			<Form
 				action="/create"
@@ -35,7 +39,7 @@ function Index(props) {
 					</div>)
 				})}
 			</div>
-		</div>
+    </div>
 	);
 }
 

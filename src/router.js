@@ -10,8 +10,8 @@ import {
 } from './functionality/actions'
 import { gigsLoader, gigLoader } from './functionality/loaders';
 import App from './App';
-import Index from './pages/Index';
-import Show from './pages/Show';
+import Index from './pages/index';
+import Show from './pages/show';
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
