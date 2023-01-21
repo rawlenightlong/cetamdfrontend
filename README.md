@@ -3,7 +3,7 @@
 This is a CRUD application that allows for management of the user's events/gigs in a chronological order to allow for more efficient and organized scheduling.
 
 # Trello Board
-[TRELLO BOARD](link)
+[TRELLO BOARD](https://trello.com/b/YQVXjjG6/cetamd)
 
 ### Technologies used:
 
@@ -17,8 +17,8 @@ This is a CRUD application that allows for management of the user's events/gigs 
 
 ### Wireframes
 
-![Wireframe 1](link)
-![Wireframe 2](link)
+![Wireframe 1](https://i.imgur.com/OwrOzRO.jpg)
+![Wireframe 2](https://i.imgur.com/iuXzxhJ.jpg)
 
 
 ### Daily Plan
