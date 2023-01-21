@@ -1,10 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
-import Calendar from './components/calendar';
+import { Outlet } from 'react-router-dom';
+import Navigation from './components/navigation';
+
 function App() {
 	return (
 		<div className="App">
-			<Calendar />
+			<Navigation />
+			<Outlet />
 		</div>
 	);
 }
