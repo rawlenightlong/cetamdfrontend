@@ -3,9 +3,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 
 function Calendar() {
+	//-----------------------////////
+	// Component State
+	//-----------------------////////
 	const [selectedDate, setSelectedDate] = useState(null);
 	const [selectedTime, setSelectedTime] = useState(null);
-
+	//-----------------------////////
+	// Component Handlers
+	//-----------------------////////
 	function handleDateSelect(date) {
 		setSelectedDate(date);
 	}
@@ -23,10 +28,12 @@ function Calendar() {
 				selectedTime.getHours(),
 				selectedTime.getMinutes()
 			);
-			console.log(date);
+			console.log(date); ////////////////This is where the data is exported
 		}
 	}
-
+	//-----------------------////////
+	// Component Itself
+	//-----------------------////////
 	return (
 		<div>
 			<div>
@@ -62,7 +69,9 @@ function Calendar() {
 		</div>
 	);
 }
-
+//-----------------------////////
+// Calendar Sub Component
+//-----------------------////////
 function CalendarTable({ onDateSelect, selected }) {
 	const [currentDate, setCurrentDate] = useState(new Date());
 
