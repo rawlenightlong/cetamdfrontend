@@ -7,7 +7,7 @@ import Calendar from "../components/calendar";
 
 function Index(props) {
 	const gigs = useLoaderData();
-	return (
+	return (<>
     <EventCreator />
 		<div className="index">
 			<Form
@@ -40,6 +40,7 @@ function Index(props) {
 				})}
 			</div>
     </div>
+	</>
 	);
 }
 
