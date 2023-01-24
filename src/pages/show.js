@@ -13,7 +13,6 @@ function Show(props) {
 				<div className="gigEvent">
 					<div>{gig.event.eventName}</div>
 					<div>{gig.event.venueName}</div>
-					<div>Presented by {gig.event.eventOwner}</div>
 				</div>
 
 				<div className="gigLocation">
