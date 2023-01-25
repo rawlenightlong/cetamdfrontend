@@ -1,7 +1,6 @@
 import React from 'react';
 import EventCreator from '../components/eventcreator';
 import { Form, Link, useLoaderData } from 'react-router-dom';
-import { loginButton, registerButton } from '../components/buttons';
 import '../styling/homePage.scss';
 function Index(props) {
 	const gigs = useLoaderData();

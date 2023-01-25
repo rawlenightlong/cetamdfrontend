@@ -6,6 +6,7 @@ body {
 }
 
 .homeBody {
+	font-size: 5em;
 	text-align: center;
 	font-family: 'Kanit', sans-serif;
 	height: 100vh;
@@ -28,17 +29,18 @@ body {
 		width: 20em;
 	}
 	button {
-		width: 4em;
+		width: 16em;
 		height: 100%;
 		padding: auto;
 		border: 1px;
-		border-radius: 10px;
+		border-radius: 40px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(0, 0, 0, 0.1);
+		box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.1);
 		&:hover {
 			cursor: pointer;
+			box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.3);
 		}
 		&:active {
 			transform: translateY(2px);
@@ -48,19 +50,15 @@ body {
 		display: inline-flex;
 		justify-content: space-between;
 		align-content: center;
-		height: 1em;
+		height: 0.75em;
 		padding: 20px;
 	}
 	.loginButton {
 		color: #476ccc;
 		background-color: white;
-		border: 1px #476ccc solid;
+		border: 4px #476ccc solid;
 		span {
-			font-size: 0.5em;
-		}
-		&:hover {
-			color: white;
-			background-color: #476ccc;
+			font-size: 2em;
 		}
 		margin-right: 5px;
 	}
@@ -68,11 +66,11 @@ body {
 		background-color: #476ccc;
 		span {
 			color: white;
-			font-size: 0.5em;
+			font-size: 2em;
 		}
 	}
 }
-@media (max-width: 160px) {
+@media (max-width: 750px) {
 	.buttonDiv {
 		flex-direction: column;
 		align-content: space-between;
