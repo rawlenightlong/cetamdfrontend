@@ -1,9 +1,6 @@
 import React from 'react';
-import EventCreator from '../components/eventcreator';
-import { Form, Link, useLoaderData } from 'react-router-dom';
 import '../styling/homePage.scss';
 function Index(props) {
-	const gigs = useLoaderData();
 	return (
 		<div className="homeBody">
 			<div className="homeText">
