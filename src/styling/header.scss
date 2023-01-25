@@ -1,0 +1,62 @@
+.header {
+	box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.5);
+	font-family: 'Kanit', sans-serif;
+	width: 100vw;
+	a {
+		text-decoration: none;
+	}
+	height: 5em;
+	background-color: #322d2d;
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: space-between;
+	h1 {
+		color: #476ccc;
+		margin: 0;
+		margin-left: 2em;
+		margin-top: auto;
+		margin-bottom: auto;
+		letter-spacing: 0.03em;
+		font-size: 3em;
+		&:hover {
+			cursor: pointer;
+			color: grey;
+		}
+	}
+	.profileIcon {
+		color: #476ccc;
+		margin-right: 2em;
+		font-size: 3em;
+		&:hover {
+			cursor: pointer;
+			color: grey;
+		}
+	}
+	.iconLink {
+		display: flex;
+		align-items: center;
+	}
+}
+
+@media (max-width: 650px) {
+	.header {
+		h1 {
+			margin-left: 0.75em;
+		}
+		.profileIcon {
+			margin-right: 1em;
+		}
+	}
+}
+@media (max-width: 300px) {
+	.header {
+		font-size: 0.5em;
+		h1 {
+			margin-left: 0.1em !important;
+		}
+		.profileIcon {
+			margin-right: 0.1em !important;
+		}
+	}
+}

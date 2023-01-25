@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import { useContext } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
+import { EventContext } from '../eventcreator';
 function TimeSelect(props) {
-	const [selectedTime, setSelectedTime] = useState(null);
+	const { eventData, setEventData } = useContext(EventContext);
 	function handleTimeSelect(time) {
-		setSelectedTime(time);
+		// setSelectedTime(time);
+		setEventData({ ...eventData, eventTime: time });
 	}
 	return (
 		<div style={{ display: props.displayStyle, padding: '5em' }}>
@@ -13,7 +15,7 @@ function TimeSelect(props) {
 			</div>
 			<div style={{ marginBottom: '2em' }}>
 				<DatePicker
-					selected={selectedTime}
+					selected={eventData.eventTime}
 					onChange={handleTimeSelect}
 					showTimeSelect
 					showTimeSelectOnly
@@ -23,8 +25,8 @@ function TimeSelect(props) {
 				/>
 			</div>
 			<div>
-				{selectedTime
-					? `Selected time: ${selectedTime.toLocaleTimeString()}`
+				{eventData.eventTime
+					? `Selected time: ${eventData.eventTime.toLocaleTimeString()}`
 					: false}
 			</div>
 		</div>

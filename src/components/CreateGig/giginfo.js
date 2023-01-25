@@ -1,16 +1,10 @@
-import React, { useState } from 'react';
-
+import { useContext } from 'react';
+import { EventContext } from '../eventcreator';
 function GigInfo(props) {
-	let eventObject = {};
-	const [formData, setFormData] = useState({
-		eventname: ' ',
-		eventowner: ' ',
-		venuename: ' ',
-	});
+	const { eventData, setEventData } = useContext(EventContext);
+
 	const handleInput = (event) => {
-		// eventObject = { [event.target.name]: event.target.value };
-		// setFormData({ ...formData, eventObject });
-		setFormData({ ...formData, [event.target.name]: event.target.value });
+		setEventData({ ...eventData, [event.target.name]: event.target.value });
 	};
 	return (
 		<div style={{ display: props.displayStyle, marginBottom: '5em' }}>
@@ -21,27 +15,26 @@ function GigInfo(props) {
 					alignItems: 'center',
 				}}
 			>
-				{' '}
 				<h3>Event Name</h3>
 				<input
 					type="text"
-					name="eventname"
+					name="eventName"
 					onChange={handleInput}
-					value={formData.eventname}
+					value={eventData.eventName}
 				/>
 				<h3>Event Owner</h3>
 				<input
 					type="text"
-					name="eventowner"
+					name="eventOwner"
 					onChange={handleInput}
-					value={formData.eventowner}
+					value={eventData.eventOwner}
 				/>
 				<h3>Venue Name</h3>
 				<input
 					type="text"
-					name="venuename"
+					name="venueName"
 					onChange={handleInput}
-					value={formData.venuename}
+					value={eventData.venueName}
 				/>
 			</form>
 		</div>
