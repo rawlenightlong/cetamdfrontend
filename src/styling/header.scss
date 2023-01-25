@@ -1,0 +1,35 @@
+.header {
+	font-family: 'Kanit', sans-serif;
+	width: 100vw;
+	a {
+		text-decoration: none;
+	}
+	height: 2em;
+	background-color: #322d2d;
+	display: flex;
+	align-items: center;
+	position: relative;
+	justify-content: space-between;
+	font-size: 0.5em;
+	h1 {
+		color: #476ccc;
+		margin: 0;
+		margin-left: 2em;
+		margin-top: auto;
+		margin-bottom: auto;
+		letter-spacing: 0.03em;
+		&:hover {
+			cursor: pointer;
+			color: grey;
+		}
+	}
+	.profileIcon {
+		color: #476ccc;
+		margin-right: 1em;
+		font-size: 1.5em;
+		&:hover {
+			cursor: pointer;
+			color: grey;
+		}
+	}
+}

@@ -1,0 +1,64 @@
+html {
+	height: 100vh;
+}
+body {
+	height: 100vh;
+}
+
+.homeBody {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Kanit', sans-serif;
+	.homeText {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	h1 {
+		margin-bottom: 0.3em;
+		font-size: 1em;
+	}
+	h2 {
+		color: rgb(0, 0, 0, 0.65);
+		font-size: 0.4em;
+		margin-bottom: 5em;
+		width: 20em;
+	}
+	button {
+		width: 4em;
+		height: 100%;
+		padding: auto;
+		border: 1px;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.buttonDiv {
+		display: inline-flex;
+		justify-content: space-between;
+		align-content: center;
+		height: 1em;
+		padding: 20px;
+	}
+	.loginButton {
+		color: #476ccc;
+		background-color: white;
+		border: 1px #476ccc solid;
+		span {
+			font-size: 0.5em;
+		}
+	}
+	.registerButton {
+		background-color: #476ccc;
+		span {
+			color: white;
+			font-size: 0.5em;
+		}
+	}
+}
+@media (max-width: 1000px) {
+}
