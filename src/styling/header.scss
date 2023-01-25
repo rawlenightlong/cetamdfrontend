@@ -1,4 +1,5 @@
 .header {
+	box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(0, 0, 0, 0.1);
 	font-family: 'Kanit', sans-serif;
 	width: 100vw;
 	a {
@@ -30,6 +31,14 @@
 		&:hover {
 			cursor: pointer;
 			color: grey;
+		}
+	}
+}
+
+@media (max-width: 160px) {
+	.header {
+		h1 {
+			margin-left: 0.75em;
 		}
 	}
 }

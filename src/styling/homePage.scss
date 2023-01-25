@@ -7,15 +7,15 @@ body {
 
 .homeBody {
 	text-align: center;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 	font-family: 'Kanit', sans-serif;
+	height: 100vh;
+	width: 100%;
 	.homeText {
 		text-align: center;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		width: 100%;
 	}
 	h1 {
 		margin-bottom: 0.3em;
@@ -36,6 +36,13 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		box-shadow: 0.5px 0.5px 0.5px 0.5px rgb(0, 0, 0, 0.1);
+		&:hover {
+			cursor: pointer;
+		}
+		&:active {
+			transform: translateY(2px);
+		}
 	}
 	.buttonDiv {
 		display: inline-flex;
@@ -51,6 +58,11 @@ body {
 		span {
 			font-size: 0.5em;
 		}
+		&:hover {
+			color: white;
+			background-color: #476ccc;
+		}
+		margin-right: 5px;
 	}
 	.registerButton {
 		background-color: #476ccc;
@@ -60,5 +72,21 @@ body {
 		}
 	}
 }
-@media (max-width: 1000px) {
+@media (max-width: 160px) {
+	.buttonDiv {
+		flex-direction: column;
+		align-content: space-between;
+		justify-content: space-between;
+	}
+	.loginButton {
+		margin-bottom: 10px;
+	}
+	.homeText {
+		h1 {
+			font-size: 0.8em;
+		}
+		h2 {
+			font-size: 0.2em;
+		}
+	}
 }
