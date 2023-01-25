@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-
+import { useState, useContext } from 'react';
+import { EventContext } from '../eventcreator';
 function DateSelect(props) {
-	const [selectedDate, setSelectedDate] = useState(null);
+	const { eventData, setEventData } = useContext(EventContext);
 
 	function handleDateSelect(date) {
-		setSelectedDate(date);
+		setEventData({ ...eventData, eventDate: date });
 	}
 
 	return (
@@ -15,20 +15,21 @@ function DateSelect(props) {
 			<div>
 				<CalendarTable
 					onDateSelect={handleDateSelect}
-					selected={selectedDate}
-					dateSelectDisplay={props.displayStyle}
+					selected={eventData.eventDate}
 				/>
 			</div>
 			<div>
-				{selectedDate
-					? `Selected date: ${selectedDate.toLocaleDateString()}`
+				{eventData.eventDate
+					? `Selected date: ${eventData.eventDate.toLocaleDateString('en-US', {
+							dateStyle: 'full',
+					  })}`
 					: 'Please select a date'}
 			</div>
 		</div>
 	);
 }
 
-function CalendarTable({ onDateSelect, selected, dateSelectDisplay }) {
+function CalendarTable({ onDateSelect, selected }) {
 	const [currentDate, setCurrentDate] = useState(new Date());
 
 	function handlePreviousMonth() {
