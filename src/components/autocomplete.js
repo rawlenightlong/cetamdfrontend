@@ -2,7 +2,6 @@ import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-auto
 import { useState } from "react"
 
 
-
 export default function Map2(props){
 
     const [address, setAddress] = useState("")
