@@ -1,7 +1,7 @@
 import { redirect } from 'react-router-dom';
 import { eventObjectCreator } from './eventObjectCreator';
 
-const URL = 'https://cetamdapi.onrender.com/gigs';
+const URL = 'http://localhost:8888/gigs';
 
 export const createAction = async ({ request }) => {
 	const formData = await request.formData();
@@ -43,7 +43,7 @@ export const deleteAction = async ({ params }) => {
 };
 
 export const formSubmit = async (eventData) => {
-	let convertedObject = await eventObjectCreator(eventData);
+	let convertedObject = eventObjectCreator(eventData);
 	await fetch(URL, {
 		method: 'post',
 		headers: {
