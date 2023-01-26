@@ -1,7 +1,7 @@
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete"
 import { useState } from "react"
 
-const apiKey = "AIzaSyDU1_Xmnfu1L_dBvs1MICHBrcXM84nOpv4"
+
 
 export default function Map2(props){
 

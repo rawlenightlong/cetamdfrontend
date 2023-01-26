@@ -4,7 +4,7 @@ import {useJsApiLoader, GoogleMap, Marker} from "@react-google-maps/api"
 
 const center={ lat: 48.8584, lng: 2.2945}
 
-const apiKey = "AIzaSyDU1_Xmnfu1L_dBvs1MICHBrcXM84nOpv4"
+
 
 
 
