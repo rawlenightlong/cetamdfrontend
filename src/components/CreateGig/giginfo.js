@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { EventContext } from '../eventcreator';
+import { EventContext } from '../../pages/dashboard';
 import Autocomplete from '../autocomplete';
 import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete"
 import { useState } from "react"

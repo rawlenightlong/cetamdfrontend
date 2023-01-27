@@ -3,7 +3,7 @@ import PlacesAutocomplete, {
 	getLatLng,
 } from 'react-places-autocomplete';
 import { useState, useContext } from 'react';
-import { EventContext } from './eventcreator';
+import { EventContext } from '../pages/dashboard';
 
 export default function Autocomplete(props) {
 	const { eventData, setEventData } = useContext(EventContext);

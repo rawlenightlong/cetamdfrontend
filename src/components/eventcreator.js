@@ -2,8 +2,8 @@ import { createContext, useState, useMemo, useEffect } from 'react';
 import DateSelect from './CreateGig/dateselect';
 import GigInfo from './CreateGig/giginfo';
 import TimeSelect from './CreateGig/timeselect';
-import { formSubmit } from '../functionality/actions';
 import { EventContext } from '../pages/dashboard';
+import { formSubmit } from '../functionality/actions';
 import { useContext } from 'react';
 import '../styling/eventCreator.scss';
 
