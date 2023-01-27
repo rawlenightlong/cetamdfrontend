@@ -2,7 +2,7 @@ import {useJsApiLoader, GoogleMap, Marker} from "@react-google-maps/api"
 
 
 
-const center ={ lat: 48.8584, lng: 2.2945}
+const center = props.location.coordinates
 
 
 export default function Map(props){
