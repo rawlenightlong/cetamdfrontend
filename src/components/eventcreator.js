@@ -18,8 +18,7 @@ export const EventCreator = () => {
 		eventName: '',
 		eventOwner: '',
 		venueName: '',
-		locationState: '',
-		locationCity: '',
+		eventCoordinates: ''
 	});
 	const contextValue = useMemo(
 		() => ({ eventData, setEventData }),
