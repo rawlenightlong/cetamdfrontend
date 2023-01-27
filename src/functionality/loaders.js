@@ -1,4 +1,4 @@
-const URL = "https://cetamdapi.onrender.com/gigs/"
+const URL = "https://cetamdapi.onrender.com/gigs"
 
 export const gigsLoader = async () => {
     const response = await fetch(URL)
