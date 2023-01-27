@@ -1,29 +1,30 @@
-import { createContext, useState, useMemo } from 'react';
+import { createContext, useState, useMemo, useEffect } from 'react';
 import DateSelect from './CreateGig/dateselect';
 import GigInfo from './CreateGig/giginfo';
 import TimeSelect from './CreateGig/timeselect';
+import { EventContext } from '../pages/dashboard';
 import { formSubmit } from '../functionality/actions';
-export const EventContext = createContext({
-	eventData: {},
-	setEventData: () => {},
+import { useContext } from 'react';
+import '../styling/eventCreator.scss';
+
+export const DisabledContext = createContext({
+	isDisabled: {},
+	setIsDisabled: () => {},
 });
+
 export const EventCreator = () => {
+	const { eventData, setEventData } = useContext(EventContext);
 	let gigInfoDisplay = 'none';
 	let dateSelectDisplay = 'none';
 	let timeSelectDisplay = 'none';
 	const [count, setCount] = useState(0);
-	const [eventData, setEventData] = useState({
-		eventDate: '',
-		eventTime: '',
-		eventName: '',
-		eventOwner: '',
-		venueName: '',
-		eventCoordinates: ''
+	const [isDisabled, setIsDisabled] = useState({
+		isDisabled: {
+			previous: true,
+			next: true,
+			submit: true,
+		},
 	});
-	const contextValue = useMemo(
-		() => ({ eventData, setEventData }),
-		[eventData]
-	);
 
 	const handleIncrement = () => {
 		if (count !== 2) {
@@ -36,6 +37,10 @@ export const EventCreator = () => {
 			setCount(count - 1);
 			getAppStage();
 		}
+	};
+	const handleFormSubmit = () => {
+		formSubmit(eventData);
+		setEventData({ ...eventData });
 	};
 	const getAppStage = () => {
 		if (count === 0) {
@@ -56,24 +61,23 @@ export const EventCreator = () => {
 	};
 	getAppStage();
 	return (
-		<EventContext.Provider value={{ eventData, setEventData }}>
-			<div
-				className="eventCreateApp"
-				style={{
-					textAlign: 'center',
-					border: 'solid 1px black',
-					padding: '1em',
-				}}
-			>
-				<div>
-					<GigInfo displayStyle={gigInfoDisplay} />
-					<DateSelect displayStyle={dateSelectDisplay} />
-					<TimeSelect displayStyle={timeSelectDisplay} />
-				</div>
-				<button onClick={() => handleDecrement()}>Previous</button>
-				<button onClick={() => handleIncrement()}>Next</button>
-				<button onClick={() => formSubmit(eventData)}>Submit</button>
+		<div
+			className="eventCreateApp"
+			style={{
+				textAlign: 'center',
+				border: 'solid 1px black',
+				padding: '1em',
+			}}
+		>
+			{' '}
+			<div>
+				<GigInfo displayStyle={gigInfoDisplay} />
+				<DateSelect displayStyle={dateSelectDisplay} />
+				<TimeSelect displayStyle={timeSelectDisplay} />
 			</div>
-		</EventContext.Provider>
+			<button onClick={() => handleDecrement()}>Previous</button>
+			<button onClick={() => handleIncrement()}>Next</button>
+			<button onClick={() => handleFormSubmit()}>Submit</button>
+		</div>
 	);
 };

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
-import { EventContext } from '../eventcreator';
+import { EventContext } from '../../pages/dashboard';
 function TimeSelect(props) {
 	const { eventData, setEventData } = useContext(EventContext);
 	function handleTimeSelect(time) {

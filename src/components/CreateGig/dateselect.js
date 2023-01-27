@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { EventContext } from '../eventcreator';
+import { EventContext } from '../../pages/dashboard';
 function DateSelect(props) {
 	const { eventData, setEventData } = useContext(EventContext);
 

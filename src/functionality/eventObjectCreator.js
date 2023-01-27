@@ -3,6 +3,7 @@ export const eventObjectCreator = (eventData) => {
 		dateStyle: 'full',
 	});
 	const eventTimeString = eventData.eventTime.toLocaleString();
+	const eventTimeStringCleanup = eventTimeString.split(' ');
 
 	const convertedEvent = {
 		event: {
@@ -25,7 +26,7 @@ export const eventObjectCreator = (eventData) => {
 					year: eventDateString.split(' ')[3],
 				},
 				Time: {
-					fullTime: eventTimeString,
+					fullTime: eventTimeStringCleanup[1] + eventTimeStringCleanup[2],
 					hour: eventTimeString.split(':')[0],
 					minute: eventTimeString.split(':')[1],
 				},
