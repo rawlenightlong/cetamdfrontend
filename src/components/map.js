@@ -2,12 +2,12 @@ import {useJsApiLoader, GoogleMap, Marker} from "@react-google-maps/api"
 
 
 
-const center={ lat: 48.8584, lng: 2.2945}
+const center ={ lat: 48.8584, lng: 2.2945}
 
 
 export default function Map(props){
 
-    const searchInput=useRef(null)
+
 
     const {isLoaded} = useJsApiLoader({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY

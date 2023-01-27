@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Map from '../components/map';
 
 function Show(props) {
 	const gig = useLoaderData();
@@ -8,6 +9,9 @@ function Show(props) {
 		<div className="gigShowPage">
 			<div className="gigInfo">
 				<div className="gigEvent">
+
+					<Map/>
+
 					<div>{gig.event.eventName}</div>
 					<div>{gig.event.venueName}</div>
 				</div>
