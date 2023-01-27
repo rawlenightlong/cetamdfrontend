@@ -1,8 +1,8 @@
 import { useContext } from 'react';
-import { EventContext } from '../eventcreator';
+import { EventContext} from '../../pages/dashboard';
+import Autocomplete from '../autocomplete';
 function GigInfo(props) {
 	const { eventData, setEventData } = useContext(EventContext);
-
 	const handleInput = (event) => {
 		setEventData({ ...eventData, [event.target.name]: event.target.value });
 	};
@@ -36,6 +36,7 @@ function GigInfo(props) {
 					onChange={handleInput}
 					value={eventData.venueName}
 				/>
+				<Autocomplete />
 			</form>
 		</div>
 	);

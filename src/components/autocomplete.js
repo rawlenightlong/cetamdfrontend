@@ -1,51 +1,64 @@
-import PlacesAutocomplete, {geocodeByAddress, getLatLng} from "react-places-autocomplete"
-import { useState } from "react"
+import PlacesAutocomplete, {
+	geocodeByAddress,
+	getLatLng,
+} from 'react-places-autocomplete';
+import { useState } from 'react';
 
+export default function Autocomplete(props) {
+	const [address, setAddress] = useState('');
+	const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
 
-export default function Map2(props){
+	const handleSelect = async (value) => {
+		const results = await geocodeByAddress(value);
+		const latLng = await getLatLng(results[0]);
+		setAddress(value);
+		setCoordinates(latLng);
+	};
 
-    const [address, setAddress] = useState("")
-    const [coordinates, setCoordinates] = useState({lat: null, lng: null})
+	return (
+		<>
+			<div>
+				<PlacesAutocomplete
+					value={address}
+					onChange={setAddress}
+					onSelect={handleSelect}
+				>
+					{({
+						getInputProps,
+						suggestions,
+						getSuggestionItemProps,
+						loading,
+					}) => {
+						return (
+							<div>
+								<p>Latitude: {coordinates.lat}</p>
+								<p>Longitude: {coordinates.lng}</p>
 
-    const handleSelect = async (value) => {
-        const results = await geocodeByAddress(value)
-        const latLng = await getLatLng(results[0])
-        setAddress(value)
-        setCoordinates(latLng)
-    }
+								<input {...getInputProps({ placeholder: '' })} />
 
-    return (<>
-    
-    <div>
+								<div>
+									{loading ? <div>...loading</div> : ''}
 
-        <PlacesAutocomplete value={address} onChange={setAddress} onSelect={handleSelect}>
-            {({ getInputProps, suggestions, getSuggestionItemProps, loading}) => {
-                return (
-                
-                <div>
+									{suggestions.map((suggestion, index) => {
+										const style = {
+											backgroundColor: suggestion.active ? '#41b636' : '#fff',
+										};
 
-                    <p>Latitude: {coordinates.lat}</p>
-                    <p>Longitude: {coordinates.lng}</p>
-
-                    <input {...getInputProps({placeholder: "type venue", })}/>
-
-                    <div>
-                        {loading ? <div>...loading</div> : null}
-
-                        {suggestions.map((suggestion, index )=> {
-
-                            const style = {
-                                backgroundColor: suggestion.active ? "#41b636" : "#fff"
-                            }
-
-                            return <div key={index} {...getSuggestionItemProps(suggestion, {style})}>{suggestion.description}</div>
-                        })}
-                        
-                    </div>
-                </div>)
-            }}
-        </PlacesAutocomplete>
-    </div>
-    
-    </>)
+										return (
+											<div
+												key={index}
+												{...getSuggestionItemProps(suggestion, { style })}
+											>
+												{suggestion.description}
+											</div>
+										);
+									})}
+								</div>
+							</div>
+						);
+					}}
+				</PlacesAutocomplete>
+			</div>
+		</>
+	);
 }
