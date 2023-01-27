@@ -10,10 +10,12 @@ function Show(props) {
 			<div className="gigInfo">
 				<div className="gigEvent">
 
-					<Map/>
+					
 
 					<div>{gig.event.eventName}</div>
 					<div>{gig.event.venueName}</div>
+
+					<Map gig={gig}/>
 				</div>
 
 				<div className="gigLocation">
