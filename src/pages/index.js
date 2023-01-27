@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import '../styling/homePage.scss';
 function Index(props) {
@@ -9,10 +10,15 @@ function Index(props) {
 			</div>
 			<div className="buttonDiv">
 				<button className="loginButton">
-					<span>Login</span>
+				<Link to={`/login`}>
+				<span>Login</span>
+								</Link>
 				</button>
+				<Link to={`/signup`}></Link>
 				<button className="registerButton">
-					<span>Register</span>
+				<Link to={`/signup`}>
+				<span>Register</span>
+								</Link>
 				</button>
 			</div>
 		</div>
