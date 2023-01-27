@@ -2,12 +2,11 @@ import {useJsApiLoader, GoogleMap, Marker} from "@react-google-maps/api"
 
 
 
-const center = props.location.coordinates
-
 
 export default function Map(props){
+    console.log(props)
 
-
+    const center = props.gig.location.coordinates
 
     const {isLoaded} = useJsApiLoader({
         googleMapsApiKey: process.env.REACT_APP_MAPS_API_KEY
@@ -21,11 +20,10 @@ export default function Map(props){
     return (<>
 
 
-   <div style={{backgroundColor: "grey", height: "400px", width: "400px", marginLeft: "auto", marginRight: "auto"}} className="map">
+   <div style={{backgroundColor: "grey", height: "300px", width: "300px", marginLeft: "auto", marginRight: "auto"}} className="map">
             <GoogleMap center={center} zoom={15} mapContainerStyle={{height: '100%',  width: '100%'}}>
-                <Marker position={center}/>
-                <Marker position={center}/>
-
+                <Marker position={center}></Marker>
+                <Marker position={center}></Marker>
             </GoogleMap>
 
 
