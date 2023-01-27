@@ -15,6 +15,7 @@ export const eventObjectCreator = (eventData) => {
 			state: eventData.locationState,
 			city: eventData.locationCity,
 			venue: eventData.venueName,
+			coordinates: eventData.eventCoordinates
 		},
 		date: {
 			stringDateTime: {
