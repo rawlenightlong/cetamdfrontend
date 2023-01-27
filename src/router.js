@@ -13,11 +13,15 @@ import App from './App';
 import Index from './pages/index';
 import Show from './pages/show';
 import Dashboard from './pages/dashboard';
+import Signup from './pages/signup';
+import Login from './pages/login';
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
 			<Route path="" element={<Index />} />
 			<Route path="/dashboard" element={<Dashboard />} loader={gigsLoader} />
+			<Route path="/login" element={<Login />} />
+			<Route path="/signup" element={<Signup />} />
 			<Route path=":id" element={<Show />} loader={gigLoader} />
 			<Route path="create" action={createAction} />
 			<Route path="update/:id" action={updateAction} />
