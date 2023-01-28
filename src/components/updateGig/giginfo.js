@@ -1,11 +1,7 @@
-import { useContext, useEffect } from 'react';
+import { useContext} from 'react';
 import { ShowContext } from '../../pages/show';
 import Autocomplete2 from '../autocomplete2';
-import PlacesAutocomplete, {
-	geocodeByAddress,
-	getLatLng,
-} from 'react-places-autocomplete';
-import { useState } from 'react';
+
 function GigInfo(props) {
 	const { gigInfo, setGigInfo } = useContext(ShowContext);
 	const handleInput = (event) => {
