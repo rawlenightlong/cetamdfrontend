@@ -21,7 +21,7 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
 			<Route path="" element={<Index />} />
-			<Route path="/dashboard" element={<Dashboard />} loader={gigsLoader} />
+			<Route path="dashboard" element={<Dashboard />} loader={gigsLoader} />
 			<Route path=":id" element={<Show />} loader={gigLoader} />
 			<Route path="create" action={createAction} />
 			<Route path="update/:id" action={updateAction} />
