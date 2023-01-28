@@ -1,8 +1,9 @@
-import { redirect } from 'react-router-dom';
+import { redirect, json } from 'react-router-dom';
 import { eventObjectCreator } from './eventObjectCreator';
 
 const URL = 'https://cetamdapi.onrender.com/gigs/' ;
 const signupURL = 'https://cetamdapi.onrender.com/auth/'
+
 
 export const createAction = async ({ request }) => {
 	const formData = await request.formData();
@@ -74,12 +75,15 @@ export const signupAction = async ({params, request}) => {
 
 export const loginAction = async ({params, request}) => {
 	const formData = await request.formData()
-	await fetch(signupURL + "login", {
+	const response = await fetch(signupURL + "login", {
 		method: 'post',
 		headers: {
 			'Content-Type': 'application/json',
 		},
 		body: JSON.stringify({username:formData.get("username"), password: formData.get("password")}),
 	});
-	return redirect('/');
+	const newToken = await response.json()
+	console.log(newToken)
+	document.cookie = `token=${newToken}`
+	return redirect('/dashboard')
 };
