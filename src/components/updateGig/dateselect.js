@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
-import { EventContext } from '../../pages/dashboard';
-function DateSelectCreate(props) {
-	const { eventData, setEventData } = useContext(EventContext);
+import { ShowContext } from '../../pages/show';
+function DateSelectUpdate(props) {
+	const { gigInfo, setGigInfo } = useContext(ShowContext);
 
 	function handleDateSelect(date) {
-		setEventData({ ...eventData, eventDate: date });
+		setGigInfo({ ...gigInfo, eventDate: date });
 	}
 
 	return (
@@ -15,12 +15,12 @@ function DateSelectCreate(props) {
 			<div>
 				<CalendarTable
 					onDateSelect={handleDateSelect}
-					selected={eventData.eventDate}
+					selected={gigInfo.eventDate}
 				/>
 			</div>
 			<div>
-				{eventData.eventDate
-					? `Selected date: ${eventData.eventDate.toLocaleDateString('en-US', {
+				{gigInfo.eventDate
+					? `Selected date: ${gigInfo.eventDate.toLocaleDateString('en-US', {
 							dateStyle: 'full',
 					  })}`
 					: 'Please select a date'}
@@ -114,4 +114,4 @@ function CalendarTable({ onDateSelect, selected }) {
 	);
 }
 
-export default DateSelectCreate;
+export default DateSelectUpdate;

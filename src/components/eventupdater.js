@@ -1,9 +1,9 @@
 import { createContext, useState, useMemo, useEffect } from 'react';
-import DateSelectCreate from './CreateGig/dateselect';
-import GigInfo from './CreateGig/giginfo';
-import TimeSelect from './CreateGig/timeselect';
-import { EventContext } from '../pages/dashboard';
-import { formSubmit } from '../functionality/actions';
+import DateSelectUpdate from './updateGig/dateselect';
+import GigInfo from './updateGig/giginfo';
+import TimeSelect from './updateGig/timeselect';
+import { ShowContext } from '../pages/show';
+import { formUpdate } from '../functionality/actions';
 import { useContext } from 'react';
 import '../styling/eventCreator.scss';
 
@@ -12,8 +12,9 @@ export const DisabledContext = createContext({
 	setIsDisabled: () => {},
 });
 
-export const EventCreator = () => {
-	const { eventData, setEventData } = useContext(EventContext);
+export const EventUpdater = (props) => {
+	const { gigInfo, setGigInfo } = useContext(ShowContext);
+
 	let gigInfoDisplay = 'none';
 	let dateSelectDisplay = 'none';
 	let timeSelectDisplay = 'none';
@@ -38,9 +39,9 @@ export const EventCreator = () => {
 			getAppStage();
 		}
 	};
-	const handleFormSubmit = () => {
-		formSubmit(eventData);
-		setEventData({ ...eventData });
+	const handleFormUpdate = () => {
+		formUpdate(gigInfo, gigInfo._id);
+		setGigInfo({ ...gigInfo });
 	};
 	const getAppStage = () => {
 		if (count === 0) {
@@ -72,7 +73,7 @@ export const EventCreator = () => {
 			{' '}
 			<div className="eventCreatorContent">
 				<GigInfo displayStyle={gigInfoDisplay} />
-				<DateSelectCreate displayStyle={dateSelectDisplay} />
+				<DateSelectUpdate displayStyle={dateSelectDisplay} />
 				<TimeSelect displayStyle={timeSelectDisplay} />
 			</div>
 			<div className="eventCreatorButtons">
@@ -83,7 +84,7 @@ export const EventCreator = () => {
 				>
 					Next
 				</button>
-				<button onClick={() => handleFormSubmit()}>Submit</button>
+				<button onClick={() => handleFormUpdate()}>Submit</button>
 			</div>
 		</div>
 	);

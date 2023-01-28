@@ -1,31 +1,27 @@
-
+import { Link } from 'react-router-dom';
 import React from 'react';
-import EventCreator from '../components/eventcreator';
-import { Form, Link, useLoaderData } from "react-router-dom";
-import Calendar from "../components/calendar";
-
-
+import '../styling/homePage.scss';
 function Index(props) {
-	const gigs = useLoaderData();
-	return (<>
-		<EventCreator />
-			<div className="index">
-				<div className='container'>
-					{gigs.map((gig) => {
-						return (<div className="card" key={gig._id}>
-									<Link to={`/${gig._id}`} className="gig">
-								<h2>{gig.event.eventName}</h2>
-								
-							</Link>
-							<h2>{gig.event.venueName}</h2>
-							<h2>{gig.date.stringDateTime.Date.fullDate}</h2>
-							<h2>{gig.date.integerDateTime.Time.fullTime}</h2>
-						</div>)
-					})}
-				</div>
+	return (
+		<div className="homeBody">
+			<div className="homeText">
+				<h1>Your new best friend</h1>
+				<h2>Welcome to the newest event planner catered to artists</h2>
+			</div>
+			<div className="buttonDiv">
+				<Link to={`/`} style={{ textDecoration: 'none' }} disabled>
+					<button className="loginButton">
+						<span>Login</span>
+					</button>
+				</Link>
+				<Link to={`/`} style={{ textDecoration: 'none' }} disabled>
+					<button className="registerButton" disabled>
+						<span>Register</span>
+					</button>
+				</Link>
+			</div>
 		</div>
-		</>
-		);
+	);
 }
 
 export default Index;

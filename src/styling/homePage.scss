@@ -1,0 +1,93 @@
+html {
+	height: 100vh;
+}
+body {
+	height: 100vh;
+}
+
+.homeBody {
+	font-size: 5em;
+	text-align: center;
+	font-family: 'Kanit', sans-serif;
+	height: 100vh;
+	width: 100%;
+	.homeText {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+	h1 {
+		margin-bottom: 0.3em;
+		font-size: 1em;
+	}
+	h2 {
+		color: rgb(0, 0, 0, 0.65);
+		font-size: 0.4em;
+		margin-bottom: 5em;
+		width: 20em;
+	}
+	button {
+		width: 16em;
+		height: 100%;
+		padding: auto;
+		border: 1px;
+		border-radius: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.1);
+		&:hover {
+			cursor: pointer;
+			box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.3);
+		}
+		&:active {
+			transform: translateY(2px);
+		}
+	}
+	.buttonDiv {
+		display: inline-flex;
+		justify-content: space-between;
+		align-content: center;
+		height: 0.75em;
+		padding: 20px;
+	}
+	.loginButton {
+		color: #476ccc;
+		background-color: white;
+		border: 4px #476ccc solid;
+		span {
+			font-size: 2em;
+		}
+		margin-right: 5px;
+	}
+	.registerButton {
+		background-color: #476ccc;
+		span {
+			color: white;
+			font-size: 2em;
+		}
+	}
+}
+@media (max-width: 750px) {
+	.buttonDiv {
+		flex-direction: column;
+		height: 40vh !important;
+		justify-content: flex-start !important;
+		a {
+			margin-bottom: 1em;
+			.registerButton {
+				border: 4px solid #476ccc;
+			}
+		}
+	}
+	.homeText {
+		h1 {
+			font-size: 0.8em;
+		}
+		h2 {
+			font-size: 0.2em;
+		}
+	}
+}

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import 'react-datepicker/dist/react-datepicker.css';
 import DatePicker from 'react-datepicker';
 import { EventContext } from '../../pages/dashboard';
@@ -8,6 +8,9 @@ function TimeSelect(props) {
 		// setSelectedTime(time);
 		setEventData({ ...eventData, eventTime: time });
 	}
+	useEffect(() => {
+		setEventData({ ...eventData, eventTime: props.eventInfo });
+	});
 	return (
 		<div
 			style={{ display: props.displayStyle, padding: '5em' }}

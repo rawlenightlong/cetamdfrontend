@@ -1,0 +1,74 @@
+.registerFormDiv {
+	display: flex;
+	flex-direction: column;
+	margin-top: 10em;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	font-family: 'Kanit', sans-serif;
+	fieldset {
+		border-color: #476ccc;
+		border-radius: 20px;
+		border-width: 0.2em;
+		box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0.1);
+	}
+	legend {
+		height: 100%;
+		color: #476ccc;
+		font-size: 2em;
+	}
+	.registerForm {
+		height: 40%;
+	}
+	.registerLabels {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		height: 40vh;
+		width: auto;
+	}
+	.textInput {
+		Input {
+			color: #476ccc;
+			background-color: white;
+			border: 4px #476ccc solid;
+			border-radius: 40px;
+			width: 10em;
+			font-size: 2em;
+			box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.1);
+		}
+	}
+	.submitRegister {
+		background-color: #476ccc;
+		font-size: 2em;
+		padding: 0.2em;
+		border-radius: 40px;
+		width: 12em;
+		color: white;
+		margin-bottom: 2em;
+		border: none;
+		box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.1);
+		&:hover {
+			cursor: pointer;
+			box-shadow: 1.5px 1.5px 1.5px 1.5px rgb(0, 0, 0, 0.3);
+		}
+	}
+}
+
+.App {
+	height: 100vh;
+}
+
+@media (max-width: 500px) {
+	legend {
+		display: none !important;
+	}
+	fieldset {
+		border: none;
+		box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0) !important;
+	}
+	input {
+		font-size: 1.5em !important;
+	}
+}
