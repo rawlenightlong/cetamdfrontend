@@ -1,9 +1,9 @@
 import { redirect, json } from 'react-router-dom';
 import { eventObjectCreator } from './eventObjectCreator';
 
-// const URL = 'https://cetamdapi.onrender.com' ;
+const URL = 'https://cetamdapi.onrender.com' ;
 const signupURL = 'https://cetamdapi.onrender.com/auth/';
-const URL = 'http://localhost:8888';
+// const URL = 'http://localhost:8888';
 
 export const createAction = async ({ request }) => {
 	const formData = await request.formData();
