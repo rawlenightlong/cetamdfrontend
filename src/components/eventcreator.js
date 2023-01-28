@@ -1,5 +1,5 @@
 import { createContext, useState, useMemo, useEffect } from 'react';
-import DateSelect from './CreateGig/dateselect';
+import DateSelect from './updateGig/dateselect';
 import GigInfo from './CreateGig/giginfo';
 import TimeSelect from './CreateGig/timeselect';
 import { EventContext } from '../pages/dashboard';
