@@ -8,14 +8,12 @@ import { EventContext } from '../pages/dashboard';
 export default function Autocomplete(props) {
 	const { eventData, setEventData } = useContext(EventContext);
 	const [address, setAddress] = useState('');
-	const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
 
 	const handleSelect = async (value) => {
 		const results = await geocodeByAddress(value);
 		console.log(results);
 		const latLng = await getLatLng(results[0]);
 		setAddress(value);
-		setCoordinates(latLng);
 		setEventData({ ...eventData, eventCoordinates: latLng, venueName: value });
 	};
 

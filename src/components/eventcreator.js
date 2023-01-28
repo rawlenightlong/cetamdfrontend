@@ -1,4 +1,4 @@
-import { createContext, useState, useMemo, useEffect } from 'react';
+import { createContext, useState } from 'react';
 import DateSelectCreate from './CreateGig/dateselect';
 import GigInfo from './CreateGig/giginfo';
 import TimeSelect from './CreateGig/timeselect';
@@ -6,11 +6,6 @@ import { EventContext } from '../pages/dashboard';
 import { formSubmit } from '../functionality/actions';
 import { useContext } from 'react';
 import '../styling/eventCreator.scss';
-
-export const DisabledContext = createContext({
-	isDisabled: {},
-	setIsDisabled: () => {},
-});
 
 export const EventCreator = () => {
 	const { eventData, setEventData } = useContext(EventContext);

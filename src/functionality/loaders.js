@@ -1,4 +1,4 @@
-const URL = 'https://cetamdapi.onrender.com/gigs/';
+const URL = 'https://cetamdapi.onrender.com/gigs';
 // const URL = 'http://localhost:8888/gigs';
 
 export const gigsLoader = async () => {
