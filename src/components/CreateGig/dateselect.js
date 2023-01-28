@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { EventContext } from '../../pages/dashboard';
-function DateSelect(props) {
+function DateSelectCreate(props) {
 	const { eventData, setEventData } = useContext(EventContext);
 
 	function handleDateSelect(date) {
@@ -114,4 +114,4 @@ function CalendarTable({ onDateSelect, selected }) {
 	);
 }
 
-export default DateSelect;
+export default DateSelectCreate;

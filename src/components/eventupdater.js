@@ -1,7 +1,7 @@
 import { createContext, useState, useMemo, useEffect } from 'react';
-import DateSelect from './updateGig/dateselect';
-import GigInfo from './CreateGig/giginfo';
-import TimeSelect from './CreateGig/timeselect';
+import DateSelectUpdate from './updateGig/dateselect';
+import GigInfo from './updateGig/giginfo';
+import TimeSelect from './updateGig/timeselect';
 import { ShowContext } from '../pages/show';
 import { formUpdate } from '../functionality/actions';
 import { useContext } from 'react';
@@ -73,7 +73,7 @@ export const EventUpdater = (props) => {
 			{' '}
 			<div className="eventCreatorContent">
 				<GigInfo displayStyle={gigInfoDisplay} />
-				<DateSelect displayStyle={dateSelectDisplay} />
+				<DateSelectUpdate displayStyle={dateSelectDisplay} />
 				<TimeSelect displayStyle={timeSelectDisplay} />
 			</div>
 			<div className="eventCreatorButtons">

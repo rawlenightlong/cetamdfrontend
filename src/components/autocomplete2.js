@@ -3,11 +3,11 @@ import PlacesAutocomplete, {
 	getLatLng,
 } from 'react-places-autocomplete';
 import { useState, useContext } from 'react';
-import { EventContext } from '../pages/dashboard';
+import { ShowContext } from '../pages/show';
 
 export default function Autocomplete2(props) {
-	const { eventData, setEventData } = useContext(EventContext);
-	const [address, setAddress] = useState(props.Info);
+	const { gigInfo, setGigInfo } = useContext(ShowContext);
+	const [address, setAddress] = useState(gigInfo.venueName);
 	const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
 
 	const handleSelect = async (value) => {
@@ -16,7 +16,7 @@ export default function Autocomplete2(props) {
 		const latLng = await getLatLng(results[0]);
 		setAddress(value);
 		setCoordinates(latLng);
-		setEventData({ ...eventData, eventCoordinates: latLng, venueName: value });
+		setGigInfo({ ...gigInfo, eventCoordinates: latLng, venueName: value });
 	};
 
 	return (

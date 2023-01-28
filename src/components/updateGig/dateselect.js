@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import { ShowContext } from '../../pages/show';
-function DateSelect(props) {
+function DateSelectUpdate(props) {
 	const { gigInfo, setGigInfo } = useContext(ShowContext);
 
 	function handleDateSelect(date) {
@@ -15,11 +15,11 @@ function DateSelect(props) {
 			<div>
 				<CalendarTable
 					onDateSelect={handleDateSelect}
-					// selected={gigInfo.eventDate}
+					selected={gigInfo.eventDate}
 				/>
 			</div>
 			<div>
-				{gigInfo //.eventDate
+				{gigInfo.eventDate
 					? `Selected date: ${gigInfo.eventDate.toLocaleDateString('en-US', {
 							dateStyle: 'full',
 					  })}`
@@ -114,4 +114,4 @@ function CalendarTable({ onDateSelect, selected }) {
 	);
 }
 
-export default DateSelect;
+export default DateSelectUpdate;

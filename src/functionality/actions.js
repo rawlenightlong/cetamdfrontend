@@ -71,8 +71,7 @@ export const formUpdate = async (eventData, id) => {
 		},
 		body: JSON.stringify(eventData),
 	});
-
-	return redirect('/dashboard');
+	window.location.reload(false);
 };
 
 // export const signupAction = async ({params, request}) => {

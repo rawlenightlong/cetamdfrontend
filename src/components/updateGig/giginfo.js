@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { EventContext } from '../../pages/dashboard';
+import { ShowContext } from '../../pages/show';
 import Autocomplete2 from '../autocomplete2';
 import PlacesAutocomplete, {
 	geocodeByAddress,
@@ -7,16 +7,13 @@ import PlacesAutocomplete, {
 } from 'react-places-autocomplete';
 import { useState } from 'react';
 function GigInfo(props) {
-	const { eventData, setEventData } = useContext(EventContext);
+	const { gigInfo, setGigInfo } = useContext(ShowContext);
 	const handleInput = (event) => {
-		setEventData({ ...eventData, [event.target.name]: event.target.value });
+		setGigInfo({
+			...gigInfo,
+			event: { ...gigInfo.event, [event.target.name]: event.target.value },
+		});
 	};
-
-	setEventData({
-		...eventData,
-		eventName: props.eventInfo.eventName,
-		eventOwner: props.eventInfo.eventOwner,
-	});
 	return (
 		<div style={{ display: props.displayStyle, marginBottom: '5em' }}>
 			<form
@@ -31,18 +28,18 @@ function GigInfo(props) {
 					type="text"
 					name="eventName"
 					onChange={handleInput}
-					value={eventData.eventName}
+					style={{ textAlign: 'center' }}
 				/>
 				<h3>Event Owner</h3>
 				<input
 					type="text"
 					name="eventOwner"
 					onChange={handleInput}
-					value={eventData.eventOwner}
+					style={{ textAlign: 'center' }}
 				/>
 				<h3>Venue Name</h3>
 
-				<Autocomplete2 info={props.eventInfo.venueName} />
+				<Autocomplete2 />
 			</form>
 		</div>
 	);

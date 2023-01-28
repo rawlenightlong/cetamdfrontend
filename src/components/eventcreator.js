@@ -1,5 +1,5 @@
 import { createContext, useState, useMemo, useEffect } from 'react';
-import DateSelect from './updateGig/dateselect';
+import DateSelectCreate from './CreateGig/dateselect';
 import GigInfo from './CreateGig/giginfo';
 import TimeSelect from './CreateGig/timeselect';
 import { EventContext } from '../pages/dashboard';
@@ -72,7 +72,7 @@ export const EventCreator = () => {
 			{' '}
 			<div className="eventCreatorContent">
 				<GigInfo displayStyle={gigInfoDisplay} />
-				<DateSelect displayStyle={dateSelectDisplay} />
+				<DateSelectCreate displayStyle={dateSelectDisplay} />
 				<TimeSelect displayStyle={timeSelectDisplay} />
 			</div>
 			<div className="eventCreatorButtons">

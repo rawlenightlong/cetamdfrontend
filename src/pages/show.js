@@ -11,7 +11,7 @@ export const ShowContext = createContext({
 
 export const Show = (props) => {
 	const gig = useLoaderData();
-	const { gigInfo, setGigInfo } = useState({ ...gig });
+	const [gigInfo, setGigInfo] = useState({ ...gig });
 	return (
 		<div className="gigShowPage">
 			<div className="gigInfo">
