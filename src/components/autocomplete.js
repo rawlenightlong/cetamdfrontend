@@ -35,7 +35,7 @@ export default function Autocomplete(props) {
 					}) => {
 						return (
 							<div>
-								<input {...getInputProps({ placeholder: 'type venue' })} />
+								<input {...getInputProps({})} />
 
 								<div>
 									{loading ? <div>...loading</div> : null}

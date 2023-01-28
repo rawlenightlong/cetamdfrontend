@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: column;
 	margin-top: 10em;
-	align-content: center;
+	align-items: center;
 	width: 100%;
 	height: 100%;
 	font-family: 'Kanit', sans-serif;
@@ -19,8 +19,6 @@
 	}
 	.registerForm {
 		height: 40%;
-		width: 30vw;
-		margin-left: 35vw;
 	}
 	.registerLabels {
 		display: flex;
@@ -60,4 +58,17 @@
 
 .App {
 	height: 100vh;
+}
+
+@media (max-width: 500px) {
+	legend {
+		display: none !important;
+	}
+	fieldset {
+		border: none;
+		box-shadow: 2px 2px 2px 2px rgb(0, 0, 0, 0) !important;
+	}
+	input {
+		font-size: 1.5em !important;
+	}
 }
