@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import { EventCreator } from '../components/eventcreator';
-import { useLoaderData, redirect } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Event from '../components/event';
 
 import '../styling/dashboard.scss';
