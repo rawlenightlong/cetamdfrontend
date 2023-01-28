@@ -1,7 +1,7 @@
 import { redirect, json } from 'react-router-dom';
 import { eventObjectCreator } from './eventObjectCreator';
 
-const URL = 'https://cetamdapi.onrender.com/gigs/' ;
+const URL = 'https://cetamdapi.onrender.com' ;
 const signupURL = 'https://cetamdapi.onrender.com/auth/'
 
 
@@ -36,6 +36,7 @@ export const updateAction = async ({ request, params }) => {
 		},
 		body: JSON.stringify(updatedGig),
 	});
+	return redirect('/')
 };
 export const deleteAction = async ({ params }) => {
 	await fetch(URL + '/gigs/' + params.id, {
@@ -48,6 +49,21 @@ export const formSubmit = async (eventData) => {
 	let convertedObject = eventObjectCreator(eventData);
 	await fetch(URL, {
 		method: 'post',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(convertedObject),
+	});
+
+	window.location.reload(false);
+
+	return redirect('/');
+};
+
+export const formUpdate = async ({eventData, params}) => {
+	let convertedObject = eventObjectCreator(eventData);
+	await fetch(URL + params.id, {
+		method: 'put',
 		headers: {
 			'Content-Type': 'application/json',
 		},
