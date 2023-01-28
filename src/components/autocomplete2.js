@@ -14,7 +14,6 @@ export default function Autocomplete2(props) {
 		console.log(results);
 		const latLng = await getLatLng(results[0]);
 		setAddress(value);
-		setCoordinates(latLng);
 		setGigInfo({ ...gigInfo, eventCoordinates: latLng, venueName: value });
 	};
 
