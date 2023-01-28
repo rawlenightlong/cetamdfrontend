@@ -2,7 +2,7 @@
 	width: 100%;
 	height: 100vh;
 	position: absolute;
-	display: flex;
+
 	top: 0;
 	justify-content: center;
 }
@@ -11,12 +11,33 @@
 	margin-left: 35%;
 	margin-top: 5em;
 	background-color: white;
-	height: fit-content;
+	height: 50%;
+	//////////
+	display: grid;
+	grid-template-rows: 8fr 2fr;
+	grid-template-columns: 1fr 8fr 1fr;
+	.eventCreatorContent {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 1;
+		grid-row-end: 2;
+		max-height: max-content;
+	}
+	.eventCreatorButtons {
+		grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+	///////
+	flex-direction: column;
+	align-items: center;
 }
 .showEventCreatorButton {
 	z-index: 9;
 }
 .eventCreatorDiv {
+	font-family: 'Kanit', sans-serif;
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -32,9 +53,76 @@
 		width: 2em;
 	}
 }
+.timeSelect {
+	padding: 0 !important;
+	.timePicker {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.react-datepicker-popper {
+		position: relative !important;
+		transform: none !important;
+		max-height: 2em !important;
+	}
+}
+
+.dateSelect {
+	thead {
+		vertical-align: text-top;
+		th {
+			button {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+}
+
+.eventCreatorButtons {
+	position: relative;
+	height: fit-content;
+	button {
+		margin-bottom: 0 !important;
+	}
+}
 
 @media (max-width: 1000px) {
 	.eventCreatorDiv {
 		background-color: white;
+		width: 100vw;
+		height: 100%;
+	}
+	.eventCreateApp {
+		height: 80%;
+		width: 100vw;
+		margin-left: 0;
+		margin-top: 0;
+		padding: 0 !important;
+
+		.eventCreatorContent {
+			width: 99vw;
+		}
+	}
+	.App {
+		width: 100%;
+		overflow-x: hidden;
+	}
+	body {
+		width: 100vw;
+	}
+	html {
+		width: 100%;
+	}
+	.eventCreatorContent {
+		width: auto;
+	}
+	.divCloseOut {
+		position: relative;
+		margin-top: 0px !important;
+		top: -2em !important;
+		right: 50% !important;
+
+		height: 2em !important;
+		width: 10em !important;
 	}
 }

@@ -9,17 +9,15 @@ function Index(props) {
 				<h2>Welcome to the newest event planner catered to artists</h2>
 			</div>
 			<div className="buttonDiv">
-				<Link to={`/login`}>
-				<button className="loginButton">
-				
-				<span>Login</span>
-				</button>
+				<Link to={`/login`} style={{ textDecoration: 'none' }}>
+					<button className="loginButton">
+						<span>Login</span>
+					</button>
 				</Link>
-				<Link to={`/signup`}>
-				<button className="registerButton">
-				
-				<span>Register</span>
-				</button>
+				<Link to={`/signup`} style={{ textDecoration: 'none' }}>
+					<button className="registerButton">
+						<span>Register</span>
+					</button>
 				</Link>
 			</div>
 		</div>

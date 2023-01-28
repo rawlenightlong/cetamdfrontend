@@ -70,14 +70,21 @@ export const EventCreator = () => {
 			}}
 		>
 			{' '}
-			<div>
+			<div className="eventCreatorContent">
 				<GigInfo displayStyle={gigInfoDisplay} />
 				<DateSelect displayStyle={dateSelectDisplay} />
 				<TimeSelect displayStyle={timeSelectDisplay} />
 			</div>
-			<button onClick={() => handleDecrement()}>Previous</button>
-			<button onClick={() => handleIncrement()}>Next</button>
-			<button onClick={() => handleFormSubmit()}>Submit</button>
+			<div className="eventCreatorButtons">
+				<button onClick={() => handleDecrement()}>Previous</button>
+				<button
+					onClick={() => handleIncrement()}
+					style={{ marginLeft: '1em', marginRight: '1em' }}
+				>
+					Next
+				</button>
+				<button onClick={() => handleFormSubmit()}>Submit</button>
+			</div>
 		</div>
 	);
 };

@@ -9,8 +9,8 @@ function DateSelect(props) {
 
 	return (
 		<div style={{ display: props.displayStyle }}>
-			<div style={{ marginBottom: '2em' }}>
-				<h1>Please select a Date</h1>
+			<div>
+				<h1 style={{ fontSize: '1.5em' }}>Please select a Date</h1>
 			</div>
 			<div>
 				<CalendarTable
@@ -46,12 +46,13 @@ function CalendarTable({ onDateSelect, selected }) {
 
 	return (
 		<div
-			style={{ display: 'flex', justifyContent: 'center', marginBottom: '5em' }}
+			style={{ display: 'flex', justifyContent: 'center' }}
+			className="dateSelect"
 		>
 			<table>
 				<thead>
-					<tr>
-						<th>
+					<tr className="dateSelectHeadRow">
+						<th style={{ height: '1em' }}>
 							<button onClick={handlePreviousMonth}>{'<'}</button>
 						</th>
 						<th colSpan="5">

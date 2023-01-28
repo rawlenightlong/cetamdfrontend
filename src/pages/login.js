@@ -1,21 +1,36 @@
 import React from 'react';
-import '../styling/homePage.scss';
+import '../styling/login.scss';
 function Login(props) {
 	return (
-        <div>
-        <form action="/user/login" method="post">
-          <fieldset>
-            <legend>User Login</legend>
-            <label
-              >Username: <input type="text" name="username" required />
-            </label>
-            <label
-              >Password: <input type="password" name="password" required />
-            </label>
-            <input type="submit" value="Login" />
-          </fieldset>
-        </form>
-      </div>
+		<div className="loginFormDiv">
+			<form action="/user/login" method="post" className="loginForm">
+				<fieldset>
+					<legend>Login</legend>
+					<div className="loginLabels">
+						{' '}
+						<label className="usernameLabel textInput">
+							<input
+								type="text"
+								name="username"
+								required
+								placeholder="Username"
+								style={{ textAlign: 'center', marginTop: '2em' }}
+							/>
+						</label>
+						<label className="passwordLabel textInput">
+							<input
+								name="password"
+								required
+								placeholder="Password"
+								type="password"
+								style={{ textAlign: 'center' }}
+							/>
+						</label>
+						<input type="submit" value="Login" className="submitLogin" />
+					</div>
+				</fieldset>
+			</form>
+		</div>
 	);
 }
 
