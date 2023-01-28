@@ -16,7 +16,7 @@ export default function Autocomplete(props) {
 		const latLng = await getLatLng(results[0]);
 		setAddress(value);
 		setCoordinates(latLng);
-		setEventData({ ...eventData, eventCoordinates: latLng, venueName: value });
+		setEventData({ ...eventData, eventCoordinates: latLng, venueName: value }); 
 	};
 
 	return (

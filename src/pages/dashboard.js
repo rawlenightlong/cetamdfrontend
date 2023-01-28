@@ -10,10 +10,14 @@ export const EventContext = createContext({
 });
 
 function Dashboard(props) {
+	let gigs;
 	if (!document.cookie) {
 		redirect('/login')
 	}
-	const gigs = useLoaderData();
+	async function GetLoader() {
+		gigs = useLoaderData()
+	}
+	GetLoader()
 	const [toggle, setToggle] = useState(0);
 	const [buttonText, setButtonText] = useState('Create New Event');
 	const [createDivDisplay, setCreateDivDisplay] = useState('none');
@@ -47,6 +51,19 @@ function Dashboard(props) {
 		setButtonText('Create New Event');
 		setToggle(0);
 	};
+	const returnGigs = () => {
+		if (gigs[0]) {
+			gigs.map((gig) => {
+				return (
+					<div className="returnedDiv">
+						<div className="dividingLine"></div>
+						<Event gig={gig} />
+					</div>
+				);
+			})
+		}
+		
+	}
 	return (
 		<div className="dashboardDiv">
 			<EventContext.Provider value={{ eventData, setEventData }}>
@@ -87,14 +104,7 @@ function Dashboard(props) {
 							<h3 className="headerTime grid4">Time:</h3>
 						</div>
 						<div className="gigsContainer">
-							{gigs.map((gig) => {
-								return (
-									<div className="returnedDiv">
-										<div className="dividingLine"></div>
-										<Event gig={gig} />
-									</div>
-								);
-							})}
+							{returnGigs()}
 						</div>
 					</div>
 				</div>

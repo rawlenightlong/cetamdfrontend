@@ -1,11 +1,18 @@
+const jwt = require('jsonwebtoken');
+require('dotenv').config();
 export const eventObjectCreator = (eventData) => {
 	const eventDateString = eventData.eventDate.toLocaleString('en-US', {
 		dateStyle: 'full',
 	});
 	const eventTimeString = eventData.eventTime.toLocaleString();
 	const eventTimeStringCleanup = eventTimeString.split(' ');
-
+	const authToken = document.cookie.split('; ')
+	.find((row) => row.startsWith('token='))
+		?.split('=')[1];
+	const { SECRET } = process.env;
+	const {username} = jwt.verify(authToken, SECRET)
 	const convertedEvent = {
+		username: username,
 		event: {
 			eventOwner: eventData.eventOwner,
 			venueName: eventData.venueName,

@@ -96,10 +96,11 @@ export const loginAction = async ({params, request}) => {
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify({username:formData.get("username"), password: formData.get("password")}),
+		body: JSON.stringify({ username: formData.get("username"), password: formData.get("password") }),
 	});
+
 	const newToken = await response.json()
 	console.log(newToken)
-	document.cookie = `token=${newToken}`
+	document.cookie = `token=${newToken.token}`
 	return redirect('/dashboard')
 };

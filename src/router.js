@@ -17,6 +17,7 @@ import Show from './pages/show';
 import Dashboard from './pages/dashboard';
 import Signup from './pages/signup';
 import Login from './pages/login';
+const axios = require('axios')
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path="/" element={<App />}>
