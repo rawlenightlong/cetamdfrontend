@@ -1,5 +1,5 @@
-// const URL = 'https://cetamdapi.onrender.com/gigs/' ;
-const URL = 'http://localhost:8888';
+const URL = 'https://cetamdapi.onrender.com/gigs/' ;
+
 export const gigsLoader = async () => {
 	const response = await fetch(URL);
 	const gigs = await response.json();
