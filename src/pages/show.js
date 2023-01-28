@@ -30,7 +30,11 @@ function Show(props) {
 				</div>
 			</div>
 
-			<div className="gigEdit"></div>
+			<div className="gigDelete">
+				<Form action={`delete/${gig._id}`} method="post">
+					<input type="submit" value={`Delete ${gig.event.eventName}`}/>
+				</Form>
+			</div>
 		</div>
 	);
 }
