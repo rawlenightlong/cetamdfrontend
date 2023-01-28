@@ -50,7 +50,7 @@ export const deleteAction = async ({ params }) => {
 
 export const formSubmit = async (eventData) => {
 	let convertedObject = eventObjectCreator(eventData);
-	await fetch(URL, {
+	await fetch(URL+ "/gigs", {
 		method: 'post',
 		headers: {
 			'Content-Type': 'application/json',
