@@ -1,5 +1,5 @@
-// const URL = 'https://cetamdapi.onrender.com/gigs/';
-const URL = 'http://localhost:8888/gigs';
+const URL = 'https://cetamdapi.onrender.com/gigs/';
+// const URL = 'http://localhost:8888/gigs';
 
 export const gigsLoader = async () => {
 	// const authToken = document.cookie.split('token=')[1]
