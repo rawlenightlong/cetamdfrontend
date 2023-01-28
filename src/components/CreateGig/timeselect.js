@@ -9,11 +9,17 @@ function TimeSelect(props) {
 		setEventData({ ...eventData, eventTime: time });
 	}
 	return (
-		<div style={{ display: props.displayStyle, padding: '5em' }}>
+		<div
+			style={{ display: props.displayStyle, padding: '5em' }}
+			className="timeSelect"
+		>
 			<div style={{ marginBottom: '2em' }}>
 				<h1>Please select a time</h1>
 			</div>
-			<div style={{ marginBottom: '2em' }}>
+			<div
+				style={{ marginBottom: '2em', textAlign: 'center' }}
+				className="timePicker"
+			>
 				<DatePicker
 					selected={eventData.eventTime}
 					onChange={handleTimeSelect}

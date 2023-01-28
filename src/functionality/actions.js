@@ -1,7 +1,8 @@
 import { redirect } from 'react-router-dom';
 import { eventObjectCreator } from './eventObjectCreator';
 
-const URL = 'https://cetamdapi.onrender.com/gigs/';
+// const URL = 'https://cetamdapi.onrender.com/gigs/' ;
+const URL = 'http://localhost:8888';
 
 export const createAction = async ({ request }) => {
 	const formData = await request.formData();
