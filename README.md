@@ -54,7 +54,7 @@ This is a CRUD application that allows for management of the user's events/gigs 
 
 ### Link to Project
 
-[CETAMD App](https://cetamdreact.onrender.com/)
+[CETAMD App](https://cetamdreact.netlify.app)
 
 ### Plannned future enhancements:
 
