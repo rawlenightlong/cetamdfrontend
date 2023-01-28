@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styling/homePage.scss';
+import {Form} from "react-router-dom"
 function Signup(props) {
 	return (
         <div>
-        <form action="/user/signup" method="post">
+        <Form action="/signup" method="post">
           <fieldset>
             <legend>New User</legend>
             <label
@@ -14,7 +15,7 @@ function Signup(props) {
             </label>
             <input type="submit" value="Create Account" />
           </fieldset>
-        </form>
+        </Form>
       </div>
 	);
 }

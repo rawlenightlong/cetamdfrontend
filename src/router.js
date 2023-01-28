@@ -7,6 +7,8 @@ import {
 	createAction,
 	updateAction,
 	deleteAction,
+	signupAction,
+	loginAction,
 } from './functionality/actions';
 import { gigsLoader, gigLoader } from './functionality/loaders';
 import App from './App';
@@ -20,8 +22,8 @@ const router = createBrowserRouter(
 		<Route path="/" element={<App />}>
 			<Route path="" element={<Index />} />
 			<Route path="/dashboard" element={<Dashboard />} loader={gigsLoader} />
-			<Route path="/login" element={<Login />} />
-			<Route path="/signup" element={<Signup />} />
+			<Route path="/login" element={<Login />} action={loginAction}/>
+			<Route path="/signup" element={<Signup />} action={signupAction} />
 			<Route path=":id" element={<Show />} loader={gigLoader} />
 			<Route path="create" action={createAction} />
 			<Route path="update/:id" action={updateAction} />
