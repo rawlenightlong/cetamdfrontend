@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Map from '../components/map';
 import { Form } from 'react-router-dom';
+import { EventUpdater } from '../components/eventupdater';
 
 function Show(props) {
 	const gig = useLoaderData();
@@ -32,9 +33,13 @@ function Show(props) {
 			</div>
 
 			<div className="gigDelete">
-				<Form action={`delete/${gig._id}`} method="post">
+				<Form action={`/delete/${gig._id}`} method="post">
 					<input type="submit" value={`Delete ${gig.event.eventName}`}/>
 				</Form>
+			</div>
+
+			<div className="gigEdit">
+				<EventUpdater/>
 			</div>
 		</div>
 	);
