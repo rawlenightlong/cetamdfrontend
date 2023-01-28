@@ -1,9 +1,10 @@
 import React from 'react';
 import '../styling/register.scss';
+import { Form } from 'react-router-dom';
 function Signup(props) {
 	return (
 		<div className="registerFormDiv">
-			<form action="/user/signup" method="post" className="registerForm">
+			<Form action="/signup" method="post" className="registerForm">
 				<fieldset>
 					<legend>Register</legend>
 					<div className="registerLabels">
@@ -32,7 +33,7 @@ function Signup(props) {
 						/>
 					</div>
 				</fieldset>
-			</form>
+			</Form>
 		</div>
 	);
 }
