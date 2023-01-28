@@ -73,11 +73,14 @@ body {
 @media (max-width: 750px) {
 	.buttonDiv {
 		flex-direction: column;
-		align-content: space-between;
-		justify-content: space-between;
-	}
-	.loginButton {
-		margin-bottom: 10px;
+		height: 40vh !important;
+		justify-content: flex-start !important;
+		a {
+			margin-bottom: 1em;
+			.registerButton {
+				border: 4px solid #476ccc;
+			}
+		}
 	}
 	.homeText {
 		h1 {
