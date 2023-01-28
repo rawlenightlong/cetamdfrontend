@@ -8,7 +8,6 @@ import { ShowContext } from '../pages/show';
 export default function Autocomplete2(props) {
 	const { gigInfo, setGigInfo } = useContext(ShowContext);
 	const [address, setAddress] = useState(gigInfo.venueName);
-	const [coordinates, setCoordinates] = useState({ lat: null, lng: null });
 
 	const handleSelect = async (value) => {
 		const results = await geocodeByAddress(value);

@@ -1,4 +1,4 @@
-import { createContext, useState} from 'react';
+import {  useState} from 'react';
 import DateSelectUpdate from './updateGig/dateselect';
 import GigInfo from './updateGig/giginfo';
 import TimeSelect from './updateGig/timeselect';
@@ -15,13 +15,7 @@ export const EventUpdater = (props) => {
 	let dateSelectDisplay = 'none';
 	let timeSelectDisplay = 'none';
 	const [count, setCount] = useState(0);
-	const [isDisabled, setIsDisabled] = useState({
-		isDisabled: {
-			previous: true,
-			next: true,
-			submit: true,
-		},
-	});
+
 
 	const handleIncrement = () => {
 		if (count !== 2) {
