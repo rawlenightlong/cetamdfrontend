@@ -11,9 +11,7 @@ export const EventContext = createContext({
 
 function Dashboard(props) {
 	let counter = 0;
-	if (!document.cookie) {
-		redirect('/login');
-	}
+
 	const gigs = useLoaderData();
 	const [toggle, setToggle] = useState(0);
 	const [buttonText, setButtonText] = useState('Create New Event');
