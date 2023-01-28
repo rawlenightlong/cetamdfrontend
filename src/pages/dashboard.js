@@ -10,8 +10,9 @@ export const EventContext = createContext({
 });
 
 function Dashboard(props) {
+	let counter = 0;
 	if (!document.cookie) {
-		redirect('/login')
+		redirect('/login');
 	}
 	const gigs = useLoaderData();
 	const [toggle, setToggle] = useState(0);
@@ -88,8 +89,9 @@ function Dashboard(props) {
 						</div>
 						<div className="gigsContainer">
 							{gigs.map((gig) => {
+								counter++;
 								return (
-									<div className="returnedDiv">
+									<div className="returnedDiv" key={`${counter}`}>
 										<div className="dividingLine"></div>
 										<Event gig={gig} />
 									</div>

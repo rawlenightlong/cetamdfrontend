@@ -30,6 +30,7 @@ function Signup(props) {
 							type="submit"
 							value="Create Account"
 							className="submitRegister"
+							disabled
 						/>
 					</div>
 				</fieldset>

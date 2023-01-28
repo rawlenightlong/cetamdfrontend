@@ -27,7 +27,12 @@ function Login(props) {
 								style={{ textAlign: 'center' }}
 							/>
 						</label>
-						<input type="submit" value="Login" className="submitLogin" />
+						<input
+							type="submit"
+							value="Login"
+							className="submitLogin"
+							disabled
+						/>
 					</div>
 				</fieldset>
 			</Form>
