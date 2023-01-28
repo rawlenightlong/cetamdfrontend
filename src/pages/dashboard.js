@@ -1,6 +1,6 @@
 import { createContext, useState, useMemo, useEffect } from 'react';
 import { EventCreator } from '../components/eventcreator';
-import { Form, Link, useLoaderData } from 'react-router-dom';
+import { Form, Link, useLoaderData, redirect } from 'react-router-dom';
 import Event from '../components/event';
 
 import '../styling/dashboard.scss';
@@ -10,6 +10,9 @@ export const EventContext = createContext({
 });
 
 function Dashboard(props) {
+	if (!document.cookie) {
+		redirect('/login')
+	}
 	const gigs = useLoaderData();
 	const [toggle, setToggle] = useState(0);
 	const [buttonText, setButtonText] = useState('Create New Event');
