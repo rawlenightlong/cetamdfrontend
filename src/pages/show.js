@@ -22,11 +22,7 @@ export const Show = (props) => {
 					<Map gig={gig} />
 				</div>
 
-				<div className="gigLocation">
-					<div>
-						{gig.location.city}, {gig.location.state}
-					</div>
-				</div>
+
 
 				<div className="gigTime">
 					<div>{gig.date.stringDateTime.Date.fullDate}</div>
@@ -41,6 +37,7 @@ export const Show = (props) => {
 			</div>
 			<ShowContext.Provider value={{ gigInfo, setGigInfo }}>
 				<div className="gigEdit">
+					<h1>Update Event</h1>
 					<EventUpdater />
 				</div>
 			</ShowContext.Provider>
