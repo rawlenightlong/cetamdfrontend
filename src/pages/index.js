@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+
 import React from 'react';
 import '../styling/homePage.scss';
 function Index(props) {
